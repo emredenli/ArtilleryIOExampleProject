@@ -1,0 +1,13 @@
+config:
+  target: "https://playwright.dev/"
+  engines:
+    playwright: {} # Bunun bir PW testi olacağını belirtiyoruz.
+  phases:
+    - duration: 10   # Test süresini (saniye) yazıyoruz.
+      arrivalRate: 1 # Saniyede oluşturulan kullanıcı sayısını yazıyoruz.
+  processor: "./tests/example.ts" # Yük testi için çalıştırılacak dosyanın yolunu yazıyoruz.
+
+scenarios:
+  - engine: playwright
+    testFunction: "default" # Dosya içindeki hangi fonksiyonu çalıştıracağını yazıyoruz.
+    name: "has title test"
